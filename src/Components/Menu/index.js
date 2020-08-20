@@ -2,7 +2,6 @@ import React, { Fragment } from "react";
 import PropTypes from "prop-types";
 import { Tab, Tabs } from "@material-ui/core/";
 import { Container, StyledSwipeableViews } from "./style";
-import SimpleCard from "../Card";
 import ShoppingList from "../ShoppingList";
 
 const SimpleBottomNavigation = () => {

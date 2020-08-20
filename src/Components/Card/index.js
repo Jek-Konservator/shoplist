@@ -1,6 +1,6 @@
 import React from "react";
-import { CardActions, CardContent, Card, Button } from "@material-ui/core/";
-import { SimpleCardContainer,StyledCard } from "./styled";
+import { CardActions, CardContent, Button } from "@material-ui/core/";
+import { SimpleCardContainer, StyledCard } from "./styled";
 
 export default function SimpleCard() {
   return (
