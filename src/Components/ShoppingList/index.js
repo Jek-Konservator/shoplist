@@ -1,6 +1,6 @@
 import React from "react";
 import {StyleShoppingList} from "./styled";
-import SimpleCard from "../Card";
+import { SimpleCard } from "../Cards";
 
 const ShoppingList = () => {
   return (

@@ -1,7 +1,7 @@
 import React from "react";
 import { AppContainer } from "./styled";
 //import { Switch, Route } from "react-router-dom";
-//import ContentPage from "./Components/Card";
+//import ContentPage from "./Components/Cards";
 import GlobalStyle from "./Components/GlobalStyle";
 import Header from "./Components/Header";
 import SimpleBottomNavigation from "./Components/Menu/index";

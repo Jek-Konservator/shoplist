@@ -1,4 +1,4 @@
-import React, { Fragment } from "react";
+import React from "react";
 import PropTypes from "prop-types";
 import { Tab, Tabs } from "@material-ui/core/";
 import { Container, StyledSwipeableViews } from "./style";
@@ -22,11 +22,7 @@ const SimpleBottomNavigation = () => {
         <Tab label="Стикеры" />
         <Tab label="GIF" />
       </Tabs>
-      <StyledSwipeableViews
-        index={value}
-        enableMouseEvents={true}
-        onChangeIndex={handleChangeIndex}
-      >
+      <StyledSwipeableViews index={value} onChangeIndex={handleChangeIndex}>
         <TabPanel value={value} index={0}>
           <ShoppingList />
         </TabPanel>
@@ -47,15 +43,15 @@ const TabPanel = (props) => {
   const { children, value, index, ...other } = props;
 
   return (
-    <Fragment
+    <div
       role="tabpanel"
       hidden={value !== index}
       id={`full-width-tabpanel-${index}`}
       aria-labelledby={`full-width-tab-${index}`}
       {...other}
     >
-      {value === index && <Fragment>{children}</Fragment>}
-    </Fragment>
+      {value === index && <div>{children}</div>}
+    </div>
   );
 };
 
