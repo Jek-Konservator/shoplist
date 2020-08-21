@@ -1,11 +1,16 @@
 import styled from "styled-components";
-import { Card } from "@material-ui/core";
 
 export const SimpleCardContainer = styled.div`
   height: 100%;
+  display: flex;
 `;
-export const StyledCard = styled(Card)`
-  border: 1px solid green;
+export const StyledCard = styled.div`
+  width: 170px;
+  height: 170px;
   margin: 10px;
+  background-color: #6b6b6b;
+  border: 3px solid #63dafd;
+  border-radius: 6%;
   box-sizing: content-box;
+  color: #ffffffff;
 `;

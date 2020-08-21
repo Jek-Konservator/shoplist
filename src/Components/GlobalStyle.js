@@ -9,6 +9,12 @@ body {
     width: 100%;
 
 }
+#root {
+  
+    height: 100vh;
+    width: 100%;
+
+}
 `;
 
 export default GlobalStyle;

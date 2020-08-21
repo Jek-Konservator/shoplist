@@ -2,10 +2,10 @@ import React from "react";
 import { SimpleCardContainer } from "./styled";
 import { CurrentCard } from "./Card";
 
-export const SimpleCard = () => {
+export const SimpleCard = ({ data }) => {
   return (
     <SimpleCardContainer>
-      {[1, 2, 3, 4].map((card) => (
+      {data.map((card) => (
         <CurrentCard key={card} card={card} />
       ))}
     </SimpleCardContainer>
