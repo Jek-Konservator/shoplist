@@ -4,7 +4,6 @@ import {StyledNewItemsModal} from "./styled";
 export const NewItemsModal = () =>{
     return(
       <StyledNewItemsModal>
-
       </StyledNewItemsModal>
   );
 };
