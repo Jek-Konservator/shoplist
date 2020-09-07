@@ -4,7 +4,7 @@ import { AppContainer } from "./styled";
 //import ContentPage from "./Components/Cards";
 import GlobalStyle from "./Components/GlobalStyle";
 import Header from "./Components/Header";
-import SimpleBottomNavigation from "./Components/Menu/index";
+import MainContent from "./Components/Menu/index";
 import { createMuiTheme, ThemeProvider } from "@material-ui/core/styles";
 
 const theme = createMuiTheme({
@@ -24,7 +24,7 @@ const App = () => {
       <AppContainer>
         <GlobalStyle />
         <Header />
-        <SimpleBottomNavigation />
+        <MainContent />
         {/*<Switch>
         <Route exact path="/" component={ContentPage} />
         <Route path="/:id" component= />

@@ -1,11 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 import PropTypes from "prop-types";
 import { Tab, Tabs } from "@material-ui/core/";
 import { Container, StyledSwipeableViews } from "./style";
 import ShoppingList from "../ShoppingList";
+import { NewItemsModal } from "../NewItemsModal";
+import { ModalContext } from "../contexts/ModalContext";
 
-const SimpleBottomNavigation = () => {
+const MainContent = () => {
   const [value, setValue] = React.useState(0);
+  const [openModal, setOpenModal] = useState(false);
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
@@ -14,30 +17,35 @@ const SimpleBottomNavigation = () => {
   const handleChangeIndex = (index) => {
     setValue(index);
   };
-
+  const handleOpenModal = () => {
+    setOpenModal(!openModal);
+  };
   return (
-    <Container>
-      <Tabs value={value} onChange={handleChange} variant="fullWidth">
-        <Tab label="Смайлы" />
-        <Tab label="Стикеры" />
-        <Tab label="GIF" />
-      </Tabs>
-      <StyledSwipeableViews index={value} onChangeIndex={handleChangeIndex}>
-        <TabPanel value={value} index={0}>
-          <ShoppingList />
-        </TabPanel>
-        <TabPanel value={value} index={1}>
-          Item Two123
-        </TabPanel>
-        <TabPanel value={value} index={2}>
-          Item Three123
-        </TabPanel>
-      </StyledSwipeableViews>
-    </Container>
+    <ModalContext.Provider value={{ handleOpenModal }}>
+      <Container>
+        <Tabs value={value} onChange={handleChange} variant="fullWidth">
+          <Tab label="Смайлы" />
+          <Tab label="Стикеры" />
+          <Tab label="GIF" />
+        </Tabs>
+        <StyledSwipeableViews index={value} onChangeIndex={handleChangeIndex}>
+          <TabPanel value={value} index={0}>
+            <ShoppingList />
+          </TabPanel>
+          <TabPanel value={value} index={1}>
+            Item Two123
+          </TabPanel>
+          <TabPanel value={value} index={2}>
+            Item Three123
+          </TabPanel>
+        </StyledSwipeableViews>
+        {openModal && <NewItemsModal />}
+      </Container>
+    </ModalContext.Provider>
   );
 };
 
-export default SimpleBottomNavigation;
+export default MainContent;
 
 const TabPanel = (props) => {
   const { children, value, index, ...other } = props;
