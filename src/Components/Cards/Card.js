@@ -1,16 +1,19 @@
-import React from "react";
+import React, { useContext } from "react";
 import { CardActions, CardContent, Button } from "@material-ui/core";
 import { StyledCard } from "./styled";
+import { DataContext } from "../contexts/DataContext";
 
-export const CurrentCard = () => {
+export const CurrentCard = ({ card }) => {
+  const { deleteCard } = useContext(DataContext);
+  const deleteCardId = () => {
+    deleteCard(card.id);
+  };
   return (
     <StyledCard>
       <CardContent>
         <>
-          <div>Word of the Day</div>
-          <div>benevolent</div>
-          <div>adjective</div>
-          <div>well meaning and kindly.</div>
+          <div>{card.name}</div>
+          <div>{card.age}</div>
         </>
       </CardContent>
       <CardActions>
@@ -18,8 +21,9 @@ export const CurrentCard = () => {
           style={{ backgroundColor: "#ffffff", border: "1px solid #000000" }}
           variant="contained"
           size="small"
+          onClick={deleteCardId}
         >
-          Learn More
+          Delete Card
         </Button>
       </CardActions>
     </StyledCard>

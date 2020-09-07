@@ -16,4 +16,7 @@ export const Hui = styled.div`
   background-color: green;
   width: 500px;
   height: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `;
